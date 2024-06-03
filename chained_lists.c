@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   chained_lists.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sforster <sforster@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 11:02:49 by sforster          #+#    #+#             */
-/*   Updated: 2024/05/28 13:14:51 by sforster         ###   ########.fr       */
+/*   Updated: 2024/06/03 14:17:59 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,19 +84,3 @@ void	ft_free_list(t_stack *head)
 	}
 	head = NULL;
 }
-
-/*
-void	ft_free_list(t_stack *head)
-{
-	t_stack	*current;
-	t_stack	*tmp;
-
-	current = head;
-	while (current != NULL)
-	{
-		tmp = current;
-		current = current->next;
-		free(tmp);
-	}
-	head = NULL;
-}*/
