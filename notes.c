@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   notes.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sforster <sforster@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 13:39:27 by sforster          #+#    #+#             */
-/*   Updated: 2024/05/30 13:39:59 by sforster         ###   ########.fr       */
+/*   Updated: 2024/06/03 13:33:36 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,8 +106,8 @@ void	rev_a_rev_b_part_2(t_stack *node_a, int len_a, int len_b)
 	rotations_b = len_b - node_a->target_node->index;
 	if (rotations_a > rotations_b)
 	{
-		node_a->partition->rra = rotations_b;
-		node_a->partition->rrr = rotations_a - rotations_b;
+		node_a->partition->rra = rotations_a - rotations_b;
+		node_a->partition->rrr = rotations_b;
 		return ;
 	}
 	else if (rotations_a == rotations_b)
@@ -117,8 +117,8 @@ void	rev_a_rev_b_part_2(t_stack *node_a, int len_a, int len_b)
 	}
 	else if (rotations_b > rotations_a)
 	{
-		node_a->partition->rrb = rotations_a;
-		node_a->partition->rrr = rotations_b - rotations_a;
+		node_a->partition->rrb = rotations_b - rotations_a;
+		node_a->partition->rrr = rotations_a;
 		return ;
 	}
 	return ;

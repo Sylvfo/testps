@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sforster <sforster@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 18:03:57 by sforster          #+#    #+#             */
-/*   Updated: 2024/05/30 13:53:26 by sforster         ###   ########.fr       */
+/*   Updated: 2024/06/03 14:09:10 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ void		play_rrarrbrrr(t_stack *node, t_stack **stack_a, t_stack **stack_b);
 
 //stack b to a 
 void		stack_b_to_stack_a(t_stack **stack_a, t_stack **stack_b);
+void		stack_b_to_stack_a_2(t_stack **stack_a, t_stack **stack_b);
 void		back_a_smaller(t_stack **stack_a, t_stack **stack_b);
 void		top_b(t_stack **stack_b);
 
@@ -114,7 +115,8 @@ void		free_min_max(t_stack *numb, char **spl, t_stack **stack_a);
 
 // prints
 void		print_lists(t_stack *a, t_stack *b);
-void		print_list(t_stack *head);
+void		print_list_a(t_stack *head);
+void		print_list_b(t_stack *head);
 
 // utils
 t_stack		*min_node(t_stack **head);

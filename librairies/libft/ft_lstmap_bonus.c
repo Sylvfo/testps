@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sforster <sforster@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 10:26:08 by sforster          #+#    #+#             */
-/*   Updated: 2023/11/29 17:17:15 by sforster         ###   ########.fr       */
+/*   Updated: 2024/06/03 14:05:07 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,6 @@ t_list	*ft_lstmap(t_list *l, void *(*f)(void *), void (*del)(void *))
 		}
 		ft_lstadd_back(&new_lst, new_node);
 		l = l->next;
-	}	
+	}
 	return (new_lst);
 }

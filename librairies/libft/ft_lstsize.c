@@ -21,6 +21,6 @@ int	ft_lstsize(t_list *lst)
 	{
 		count++;
 		lst = lst->next;
-	}		
+	}
 	return (count);
 }

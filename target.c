@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   target.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sforster <sforster@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 13:47:29 by sforster          #+#    #+#             */
-/*   Updated: 2024/05/30 13:47:57 by sforster         ###   ########.fr       */
+/*   Updated: 2024/06/03 14:03:08 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,8 @@ void	target_nodes(t_stack **stack_a, t_stack **stack_b)
 void	target_max(t_stack *cur_a, t_stack *cur_b, t_stack *maxb)
 {
 	while (cur_b != NULL && cur_b->num < maxb->num)
-				cur_b = cur_b->next;
-			cur_a->target_node = cur_b;
+		cur_b = cur_b->next;
+	cur_a->target_node = cur_b;
 	return ;
 }
 

@@ -3,16 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   stack_b_to_a.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sforster <sforster@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 13:44:37 by sforster          #+#    #+#             */
-/*   Updated: 2024/05/30 13:47:12 by sforster         ###   ########.fr       */
+/*   Updated: 2024/06/03 14:15:42 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 void	stack_b_to_stack_a(t_stack **stack_a, t_stack **stack_b)
+{
+	t_stack		*cur_a;
+	int			min;
+
+	cur_a = *stack_a;
+	min = cur_a->num;
+	if ((*stack_b)->num < min)
+	{
+		back_a_smaller(stack_a, stack_b);
+		return ;
+	}
+	stack_b_to_stack_a_2(stack_a, stack_b);
+	return ;
+}
+
+void	stack_b_to_stack_a_2(t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack		*cur_a;
 	int			min;
@@ -23,8 +39,6 @@ void	stack_b_to_stack_a(t_stack **stack_a, t_stack **stack_b)
 	min = cur_a->num;
 	middle = cur_a->next->num;
 	max = cur_a->next->next->num;
-	if ((*stack_b)->num < min)
-		back_a_smaller(stack_a, stack_b);
 	cur_a = *stack_a;
 	while ((*stack_b) != NULL && (*stack_b)->num > max)
 		push_a(stack_a, stack_b);
@@ -75,3 +89,36 @@ void	top_b(t_stack **stack_b)
 	free (b_min);
 	return ;
 }
+
+/*
+void	stack_b_to_stack_a(t_stack **stack_a, t_stack **stack_b)
+{
+	t_stack		*cur_a;
+	int			min;
+	int			middle;
+	int			max;
+
+	cur_a = *stack_a;
+	min = cur_a->num;
+	middle = cur_a->next->num;
+	max = cur_a->next->next->num;
+	if ((*stack_b)->num < min)
+	{
+		back_a_smaller(stack_a, stack_b);
+		return ;
+	}
+	cur_a = *stack_a;
+	while ((*stack_b) != NULL && (*stack_b)->num > max)
+		push_a(stack_a, stack_b);
+	rra(stack_a);
+	while ((*stack_b) != NULL && (*stack_b)->num > middle)
+		push_a(stack_a, stack_b);
+	rra(stack_a);
+	while ((*stack_b) != NULL && (*stack_b)->num > min)
+		push_a(stack_a, stack_b);
+	rra(stack_a);
+	while ((*stack_b) != NULL)
+		push_a(stack_a, stack_b);
+	return ;
+}
+*/
